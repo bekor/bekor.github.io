@@ -1,0 +1,87 @@
+
+
+/* ==========================================================================
+   Bekor's custom styles
+   ========================================================================== */
+
+/* 
+* Header menu style 
+*/
+.headermenu {
+    font-family: "Arial", Georgia;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.headermenu li  {
+    padding: 10px;
+}
+
+.headermenu a:hover{
+    text-decoration: none;
+}
+
+.headermenu a {
+    padding: 10px;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus{
+    color: whitesmoke;
+}
+
+.languages {
+    float: right;
+    padding: 50px;
+}
+
+/*
+* Welcome div style
+*/
+
+.welcomed {
+    margin-bottom: 0;
+    background: #222;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.welcomed p {
+    padding-top: 20px;
+}
+
+/*
+* Projects style
+*/
+
+.pbody {
+    color: #31708f;
+}
+
+.pbuttons {
+    background-color: #262626;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0px
+}
+
+.pbuttons:hover {
+    color: whitesmoke;
+    background: #777;
+}
+
+
+
+
+
+
+
+
+
+
+
+
