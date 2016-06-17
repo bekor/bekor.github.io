@@ -17,11 +17,8 @@
     padding: 10px;
 }
 
-.headermenu a:hover{
-    text-decoration: none;
-}
-
 .headermenu a {
+    text-decoration: none;
     padding: 10px;
 }
 
