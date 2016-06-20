@@ -5,12 +5,13 @@
    ========================================================================== */
 
 /* 
-* Header menu style 
+***************        Header menu style        *************** 
 */
 .headermenu {
     font-family: "Arial", Georgia;
     font-weight: bold;
     font-size: 20px;
+    list-style-type: none;
 }
 
 .headermenu li  {
@@ -32,7 +33,7 @@
 }
 
 /*
-* Welcome div style
+***************        Welcome div style        ***************
 */
 
 .welcomed {
@@ -47,8 +48,22 @@
 }
 
 /*
-* Projects style
+***************        Projects style        ***************
 */
+
+.prjhead{
+    padding: 30px 0 30px 0;
+    border-style: ridge;
+    border-top: thick #ff0000;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.prjfont{
+    font-family: "Arial", Georgia;
+    font-size: 40px;
+}
 
 .pbody {
     color: #31708f;
@@ -71,14 +86,23 @@
     background: #777;
 }
 
+.pbuttons:visited {
+    color: lawngreen;
+}
 
+.projects {
+    color: whitesmoke;
+    height: inherit;
+    width: inherit;
+}
 
+.projects div {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #222;
+    
+}
 
-
-
-
-
-
-
-
-
+#projectsId {
+    display: none;
+}

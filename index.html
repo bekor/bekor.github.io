@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbar"><!--/.navbar-collapse -->
-                <ul class="navbar navbar-nav headermenu" style="list-style-type: none">
+                <ul class="navbar navbar-nav headermenu">
                     <li class="active"><a href="#">home</a></li>
                     <li><a href="#">projects</a></li>
                     <li><a href="#">about me</a></li>
@@ -62,8 +62,9 @@
     </div>
 
     <div class="container" style="text-align: center">
-      <!-- Example row of columns -->
-      <div> <h2> Projects </h2> </div>
+      <div class="container prjhead">
+          <h2 class="prjfont"> Projects </h2> 
+      </div>
       
       <hr style="border-color: #222"> 
       
@@ -71,15 +72,28 @@
         <div class="col-md-6">
           <h2>JAVA</h2>
           <p>These project based on some coursera's courses. Most of them </p>
-          <p><a class="btn btn-lg pbuttons" href="#" role="button">For more information</a></p>
+          <p><a class="btn btn-lg pbuttons" onclick="displayToggle()" href="#" role="button">For more information</a></p>
         </div>
         <div class="col-md-6">
           <h2>Python</h2>
           <p>These project based on courses.</p>
           <p><a class="btn btn-lg pbuttons" href="#" role="button">For more information</a></p>
-       </div>
+        </div>
       </div>
 
+      <section class="container projects" id="projectsId">
+        <div class="row">
+            <figure class="col-sm-6">
+                <h2>JAVA</h2>
+                <p>These project based on some coursera's courses. Most of them </p>
+            </figure>
+            <figure class="col-sm-6">
+                <h2>Python</h2>
+                <p>These project based on courses.</p>
+            </figure>
+        </div>
+      </section>
+      
       <hr>
 
       <footer>
