@@ -27,6 +27,34 @@
     color: whitesmoke;
 }
 
+nav ul li {
+    display:  block;
+    float: left;
+}
+
+nav ul ul {
+    display: none;
+}
+
+nav ul ul li {
+    display: block;
+    float: none;
+}
+
+.dropdown-menu{
+    position: absolute;
+    background-color: #222;
+    right: 0px;
+    max-width: 100px;
+}
+
+.dropdown-menu li a{
+    font-family: "Arial", Georgia;
+    font-size: 16px;
+    align-content: center;
+    color: whitesmoke;
+}
+
 .languages {
     float: right;
     padding: 50px;
