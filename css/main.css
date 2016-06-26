@@ -23,6 +23,20 @@
     padding: 10px;
 }
 
+.logo {
+    padding: 0px;
+    max-width: 100px;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand>a>img {
+  height: auto;
+  width: auto;
+}
+
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus{
     color: whitesmoke;
 }
@@ -79,7 +93,7 @@ nav ul ul li {
 ***************        Projects style        ***************
 */
 
-.prjhead{
+.phead{
     padding: 30px 0 30px 0;
     border-style: ridge;
     border-top: thick #ff0000;
@@ -88,30 +102,13 @@ nav ul ul li {
     border-right: 0;
 }
 
-.prjfont{
+.pfont{
     font-family: "Arial", Georgia;
     font-size: 40px;
 }
 
 .pbody {
     color: #31708f;
-}
-
-.pbuttons {
-    background-color: #262626;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 0px
-}
-
-.pbuttons:hover {
-    color: whitesmoke;
-    background: #777;
 }
 
 .pbuttons:visited {
@@ -131,6 +128,11 @@ nav ul ul li {
     
 }
 
-#projectsId {
-    display: none;
+.pdescript {
+    font-size: 16px; 
+}
+
+.pdescript p {
+    font-size: 14px;
+    color: gray;
 }
