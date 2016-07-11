@@ -1,0 +1,25 @@
+/*
+ * This class will help to find the ColdestOneDay from the CSV files.
+ */
+package csvtemperature;
+
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+
+/**
+ * Implement the MeghivhatoSzamlalo interface, and extend the class with SzamoloSegito class
+ * 
+ * @author Bekor
+ */
+public class ColdestOneDay extends SzamoloSegito implements MeghivhatoSzamolo {
+
+    public CSVRecord szamol(CSVParser parser, CSVRecord initial) {
+        this.initial = initial;
+        CSVRecord largest_so_far = null;
+        
+        for(CSVRecord current_row : parser) {
+            largest_so_far = getSmallestOnTwo(current_row, "TemperatureF");
+        }
+        return largest_so_far;
+    }
+}

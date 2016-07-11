@@ -4,27 +4,26 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html lang="en">
+<html lang="hu">
     <head>
-        <title>My Java projects</title>
+        <title>Java projektjeim</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="apple-touch-icon" href="img/websiteimg.gif">
-        <link rel="icon" type="image/png" href="img/websiteimg.png">
+        <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
         <style>
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/projects.css">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/projects.css">
+        
+        <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body style="background: #adadad">
         <!--[if lt IE 8]>
@@ -39,22 +38,22 @@ and open the template in the editor.
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" rel="home" href="index.html"><img style="max-width:50px; margin-top: 0px;" src="img/websiteimg.gif" alt="B"></a>
+              <a class="navbar-brand" rel="home" href="hu/index.html"><img style="max-width:50px; margin-top: 0px;" src="../img/websiteimg.gif" alt="B"></a>
               <div class="collapse navbar-collapse" id="navbar"><!--/.navbar-collapse -->
                     <ul class="navbar navbar-nav headermenu">
-                        <li><a href="index.html">home</a></li>
+                        <li><a href="index.html">kezdőlap</a></li>
                         <li class="active dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">projects<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">projektek<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li class="active"><a href="#">Java</a></li>
-                                <li><a href="prjpython.html">Python</a></li>
+                                <li><a href="prjpython.html">Phyton</a></li>
                             </ul>
                         </li>
-                        <li><a href="aboutme.html">about me</a></li>
+                        <li><a href="aboutme.html">rólam</a></li>
                     </ul>
                     <ul class="navbar navbar-nav navbar-right headermenu">
-                        <li class="active"><a href="#">EN</a></li>
-                        <li><a href="hu/prjjava.html">HU</a></li>
+                        <li><a href="../prjjava.html">EN</a></li>
+                        <li class="active"><a href="#">HU</a></li>
                     </ul>
               </div>
             </div>
@@ -63,9 +62,9 @@ and open the template in the editor.
 
         <div class="jumbotron welcomed">
           <div class="container container-fluid">
-            <h1>Java projects</h1>
-            <h2>Here are the extractions of my Java projects</h2>
-            <p>Most of the projects are based on courseras.com courses.<br> These are handling different CSV files.</p>
+            <h1>Java projektek</h1>
+            <h2>Ez az oldal Java projektjeim kivonatát tartalmazza</h2>
+            <p>A programok a courseras.com kurusain tanultak alapján készültek.<br> Ezek különböző CSV filok kezelésével foglakoznak.</p>
           </div>
         </div>
     
@@ -75,14 +74,14 @@ and open the template in the editor.
                    <a href="#">
                         <img class="img-responsive imig" src="https://upload.wikimedia.org/wikipedia/en/8/88/Java_logo.png" alt="B1">
                     </a>
-                    <h3>Gene extraction from DNA</h3>
-                    <p>This program is reading in a CSV file which contains a DNA chain. It is extracting the Genes from the DNA</p>
-                    <button type="button" class="btn barmi" data-type="projects/allGene.txt">For program</button>
+                    <h3>Gén keresés DNS láncban</h3>
+                    <p>Ez a program feldogoz egy DNS láncot tartalmazó <br> CSV filet. Megkeresi a megfelelő géneket a DNS láncban.</p>
+                    <button type="button" class="btn barmi" data-type="../projects/allGene.txt">Program</button>
                     <div class="modal">
                         <div class="modal-body">
                             <div class="modal-content">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a data-toggle="tab" href="projects/allGene.txt" aria-controls="tab1" role="tab">All Gene</a></li>
+                                    <li role="presentation" class="active"><a data-toggle="tab" href="../projects/allGene.txt" aria-controls="tab1" role="tab">Gének</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" id="allG" class="tab-pane fade in active">
@@ -90,7 +89,7 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default bezaro-gomb"><span class="close">Close</span></button>
+                                    <button type="button" class="btn btn-default bezaro-gomb"><span class="close">Bezárás</span></button>
                                 </div>
                             </div>
                         </div>
@@ -101,19 +100,19 @@ and open the template in the editor.
                    <a href="#">
                         <img class="img-responsive imig" src="https://upload.wikimedia.org/wikipedia/en/8/88/Java_logo.png" alt="B2">
                     </a>
-                    <h3>Temperature data analyser</h3>
-                    <p>This program can analyse a bunch of CSV file (eg. daily data from 1880 to 2014). Can find the highest and the lowest temperature from the collected data.</p>
-                    <button type="button" class="btn barmi" data-type="projects/Csvtemperature.txt">For program</button>
+                    <h3>Hőmérsékleti adat elemzés</h3>
+                    <p>Ez a program sok CSV filet tud elemezni (pl. napi adatok 1880-tól 2014-ig). Megtalálja a legmagasabb és a legalacsonyabb hőmérsékleti értéket az adatokban.</p>
+                    <button type="button" class="btn barmi" data-type="../projects/Csvtemperature.txt">Program</button>
                     <div class="modal">
                         <div class="modal-body">
                             <div class="modal-content">
                                 <ul id="myTabs" class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a data-toggle="tab" href="#" data-url="projects/Csvtemperature.txt" aria-controls="tab2" role="tab">Main</a></li>
-                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="projects/MeghivhatoSzamlalo.txt" aria-controls="tab3" role="tab">Interface</a></li>
-                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="projects/HumidityOneDay.txt" aria-controls="tab4" role="tab">Humidity</a></li>
-                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="projects/HottesttOneDay.txt" aria-controls="tab5" role="tab">Hot Day</a></li>
-                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="projects/ColdestOneDay.txt" aria-controls="tab6" role="tab">Cold Day</a></li>
-                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="projects/IdojarasSzamolo.txt" aria-controls="tab7" role="tab">Calculate Help</a></li>
+                                    <li role="presentation" class="active"><a data-toggle="tab" href="#" data-url="../projects/Csvtemperature.txt" aria-controls="tab2" role="tab">Main</a></li>
+                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="../projects/MeghivhatoSzamlalo.txt" aria-controls="tab3" role="tab">Interface</a></li>
+                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="../projects/HumidityOneDay.txt" aria-controls="tab4" role="tab">Humidity</a></li>
+                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="../projects/HottesttOneDay.txt" aria-controls="tab5" role="tab">Hot Day</a></li>
+                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="../projects/ColdestOneDay.txt" aria-controls="tab6" role="tab">Cold Day</a></li>
+                                    <li role="presentation"><a data-toggle="tab" href="#" data-url="../projects/IdojarasSzamolo.txt" aria-controls="tab7" role="tab">Calculate Help</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" id="tab2" class="tab-pane fade in active">
@@ -136,7 +135,7 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default bezaro-gomb"><span class="close">Close</span></button>
+                                    <button type="button" class="btn btn-default bezaro-gomb"><span class="close">Bezárás</span></button>
                                 </div>
                             </div>
                         </div>
@@ -147,14 +146,14 @@ and open the template in the editor.
                    <a href="#">
                         <img class="img-responsive imig" src="https://upload.wikimedia.org/wikipedia/en/8/88/Java_logo.png" alt="B3">
                     </a>
-                    <h3>Baby Name finder</h3>
-                    <p>This program analyse a bunch of CSV files which contains the birth name, gender and the amount of baby birth in that year in a given name. Program can find a name and it's rank from every year.</p>
-                    <button type="button" class="btn barmi" data-type="projects/babyName.txt">For program</button>
+                    <h3>Baba név kereső</h3>
+                    <p>Ez a program egy adag CSV fileban keresgél, születési névre, nemre és az adott évben mennyi baba született egy azonos néven. A program megkeresi az adott névhez tartozó rankot minden évből.</p>
+                    <button type="button" class="btn barmi" data-type="../projects/babyName.txt">Program</button>
                     <div class="modal">
                         <div class="modal-body">
                             <div class="modal-content">
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a data-toggle="tab" href="projects/babyName.txt" aria-controls="tab8" role="tab">Baby Name</a></li>
+                                    <li role="presentation" class="active"><a data-toggle="tab" href="../projects/babyName.txt" aria-controls="tab8" role="tab">Baba név</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div role="tabpanel" id="tab8" class="tab-pane fade in active">
@@ -162,7 +161,7 @@ and open the template in the editor.
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default bezaro-gomb"><span class="close">Close</span></button>
+                                    <button type="button" class="btn btn-default bezaro-gomb"><span class="close">Bezárás</span></button>
                                 </div>
                             </div>
                         </div>
@@ -174,12 +173,11 @@ and open the template in the editor.
     
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
-
-        <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
-        
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+        <script src="../js/vendor/bootstrap.min.js"></script>
+
+        <script src="../js/main.js"></script>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--<script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

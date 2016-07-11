@@ -1,0 +1,17 @@
+/*
+ * It is an interface for calculation. 
+ * It is using the imported CSV parserer and recorder.
+ * 
+ */
+package csvtemperature;
+
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+
+/**
+ *
+ * @author Bekor
+ */
+public interface MeghivhatoSzamolo {
+    public CSVRecord szamol(CSVParser parser, CSVRecord initial);
+}

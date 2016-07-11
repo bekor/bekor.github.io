@@ -1,0 +1,85 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package csvtemperature;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.OptionalDouble;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
+
+/**
+ * This class pick every important column from the CSV and put them in an ArrayList
+ * This will generate a specific database.
+ * Use it for calculation in other classis.
+ * 
+ * @author Bekor
+ */
+public class IdojarasSzamolo {
+    
+    private final ArrayList<CSVRecord> adatok = new ArrayList<>();
+    private final ArrayList<Double> homersekletek = new ArrayList<>();
+    private final ArrayList<Double> paratartalmak = new ArrayList<>();
+    private final ArrayList<Double> atlagokfelett = new ArrayList<>();
+    
+    public void addData(CSVParser file) {
+        for(CSVRecord row : file){
+            adatok.add(row);
+            Double homerseklet = Double.parseDouble(row.get("TemperatureF")); //Temperature is in Farenheit
+            Double paratartalom = Double.parseDouble(row.get("Humidity"));
+            if(homerseklet > -100) { // Temperature above -100 F
+                    homersekletek.add(homerseklet);
+            }
+            try {
+                if(paratartalom >= 80) { // Humidity above 80
+                    atlagokfelett.add(homerseklet);
+                }
+            } catch (NumberFormatException ex) {
+            }
+            try {
+                paratartalmak.add(Double.parseDouble(row.get("Humidity")));
+            } catch (NumberFormatException ex ) {
+            }
+        }
+    }
+    
+    // These give back the max or min temperature or humidity from the database
+    
+    public CSVRecord getHottestDay() {
+        return adatok.get(
+                homersekletek.indexOf(
+                        Collections.max(homersekletek)));
+    }
+    
+    public CSVRecord getColdestDay() {
+        return adatok.get(
+                homersekletek.indexOf(
+                        Collections.min(homersekletek)));
+    }
+    
+    public CSVRecord getHighHumidDay() {
+        return adatok.get(
+                paratartalmak.indexOf(
+                        Collections.max(paratartalmak)));
+    }
+    
+    public CSVRecord getLowHumidDay() {
+        return adatok.get(
+                paratartalmak.indexOf(
+                        Collections.min(paratartalmak)));
+    }
+    
+    // These will give back the avarage temperature and the avareage temperature where the humidity is above 80.
+    public double getAvarageTemp() {
+        OptionalDouble atlag = homersekletek.stream().mapToDouble(a -> a).average();
+        return atlag.getAsDouble();
+    }
+    
+    public double getOver80AvarageTemp() {
+        OptionalDouble atlag = atlagokfelett.stream().mapToDouble(a -> a).average();
+        return atlag.getAsDouble();
+    }
+}

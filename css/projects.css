@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-Jul-2016, 00:13:19
+    Author     : Joe Bekor
+*/
+
+/* ==========================================================================
+   Bekor's custom styles
+   ========================================================================== */
+
+.portfolio-item {
+    margin-bottom: 25px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.imig {
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 1100px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    color: #265a88;
+    font-weight: bold;
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#opener{
+    width: 95%;
+    height: 400px;
+    margin-left: 5px;
+    margin-top: 5px;
+    overflow: auto;
+    text-align: left;
+}
+
+#mP1{ display: none; }
+

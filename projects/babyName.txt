@@ -1,0 +1,220 @@
+/*
+ * This program is analyzing the selected CSV files. These have the following structure:
+ * The CSVs contains names, gender, and the number of babys which got that name in a specific year.
+ * Tha data are collected in USA.
+ *  //  Mary, F, 7065
+ *  //  Anna, F, 2604
+ *  //  Emma, F, 2003 etc.
+ * It ranks the names by Gender in gender by how many times come up and finally by alphabetically.
+ * 
+ */
+package babyname;
+
+import edu.duke.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.OptionalDouble;
+import org.apache.commons.csv.*;
+
+/**
+ * This program is based on a Duke University's coursera.org course.
+ *
+ * @author Bekor
+ */
+public class Babyname {
+    
+    
+    public void test() {
+//        FileResource fr = new FileResource(); // The program isn't has a single function for collecting every data in arrays
+//        printNames(fr); // Working with a single csv file
+//        totalBirths(fr); // Working with a single csv file
+//        getRank(1974, "Owen", "M"); // Working with a single csv file
+//        getName(2014, 430, "M"); // Working with a single csv file
+//        getName(2014, 3, "F"); // Working with a single csv file
+//        yearOfHighestRank("Mich", "M"); // Working with a multiple csv file
+//        getAverageRank("Susan", "F"); // Working with a multiple csv file
+        getTotalBirthsRankedHigher(1990, "Drew", "M"); // Working with a single csv file
+    }
+
+    public void printNames(FileResource fr) {
+        for (CSVRecord rec : fr.getCSVParser()) {
+            int num_born = Integer.parseInt(rec.get(2));
+            if (num_born <= 100){ // print out 
+                System.out.println("Name " + rec.get(0) + " Gender " + rec.get(1) + " Num Born " +rec.get(2));
+            }
+        }
+    }
+    
+    // Summ up the total number of birth in a specific year.
+    public void totalBirths (FileResource f) {
+        int total_births = 0;
+        int tot_boys = 0;
+        int tot_girls = 0;
+        for(CSVRecord rec : f.getCSVParser()) {
+            int num_born = Integer.parseInt(rec.get(2));
+            total_births += num_born;
+            if(rec.get(1).equals("M")) {
+                tot_boys += num_born;
+            }
+            else {
+                tot_girls += num_born;
+            }
+        }
+        System.out.println("total births = " + total_births);
+        System.out.println("total boys = " + tot_boys);
+        System.out.println("total girls = " + tot_girls);
+    }
+    
+    
+    // Get the rank of a name in a speficied year
+    public void getRank( int year, String name, String gender) {
+        float number = 0;
+        float numbers = 0;
+        float numberb = 0;
+        FileResource gr = new FileResource();
+        Genrecount szamol = new Genrecount();
+        number = szamol.counting(gr, gender);
+        System.out.println(number);
+        for (CSVRecord rec : gr.getCSVParser()){
+            //boolean famale = rec.get(1).equals(gender);
+            //boolean baby_name = rec.get(0).equals(name);            
+            if (gender == "F" && rec.get(0).equals(name)) {
+                numberb = rec.getRecordNumber() + 1;
+                break;
+            }
+            if (rec.get(1).equals("M")) {
+                numbers++;
+                if(rec.get(0).equals(name)) {
+                    numberb = numbers;
+                    System.out.println(numbers +" , " + numberb);
+                }
+            }
+            else {
+                numberb = -1;
+            }
+        }
+        System.out.println(name + " in "+ year + " was the " + numberb + ". pupular name");
+    }
+    
+    // Get the name of a baby in a specified year, gender and in a rank
+    public void getName(int year, int rank, String gender) {
+        float number = 0;
+        float numbers = 0;
+        String names;
+        FileResource gr = new FileResource();
+        Genrecount szamol = new Genrecount();
+        number = szamol.counting(gr, gender);
+        for(CSVRecord rec : gr.getCSVParser()){
+            long num_born = rec.getRecordNumber();
+            if(gender == "F") {
+                if(num_born == (rank-1)){
+                    System.out.println(rec.get(0) + " is the " + rank);
+                }
+            }
+            if(rec.get(1).equals("M")) {
+                numbers ++;
+                if(numbers == rank){
+                    names = rec.get(0);
+                    System.out.println(names + " is the " + rank);
+                }
+            }
+        }
+    }
+    
+    // Get the year of a secified name with the highest rank
+    public void yearOfHighestRank(String name, String gender) {
+        float current = 0;
+        float largest = 10000000;
+        String filename = null;
+        DirectoryResource dr = new DirectoryResource();
+        Iterable<File> fileok = dr.selectedFiles();
+        for(File fl : fileok) {
+            FileResource fr = new FileResource(fl);
+            for(CSVRecord rec : fr.getCSVParser()){
+                String names = rec.get(0);
+                if(names.equals(name)) {
+                    current = rec.getRecordNumber()+1;
+                    if( current < largest) {
+                        filename = fl.getName();
+                        largest = current;
+                    }
+                }
+            }
+        }
+        System.out.println(largest + " were " + name + ", namefile " + filename);
+ 
+    }
+    
+    // Calculate the avarage rank of a name from every year
+    public void getAverageRank(String name, String gender) {
+        ArrayList<Double> datas = new ArrayList<>();
+        double current = 0;
+        double number = 0;
+        double numbers =0;
+        DirectoryResource dr = new DirectoryResource();
+        Iterable<File> fileok = dr.selectedFiles();
+        for(File fl : fileok) {
+            FileResource fr = new FileResource(fl);
+            Genrecount szamol = new Genrecount();
+            number = szamol.counting(fr, gender);
+            for(CSVRecord rec : fr.getCSVParser()) {
+                String names = rec.get(0);
+                if(gender == "F") {
+                    numbers++;
+                    if(names.equals(name)) {
+                        current = numbers;
+                        datas.add(current);
+                    }
+                }
+                if(rec.get(1).equals("M") && gender != "F") {
+                    numbers++;
+                    if(names.equals(name)) {
+                        //current = rec.getRecordNumber()+1;
+                        System.out.println(numbers + " file name " + fl.getName());
+                        current = numbers;
+                        datas.add(current);
+                    }
+                }
+            }
+            numbers = 0;
+        }
+        OptionalDouble atlag = datas.stream().mapToDouble(a -> a).average();
+        System.out.println(atlag + name + " is the average");
+    }
+    
+    // Calculate how many name have higher rank than the specified name, in a year 
+    public void getTotalBirthsRankedHigher(int year, String name, String gender) {
+        int numbers = 0;
+        int counter = 0;
+
+        FileResource gr = new FileResource();
+        for(CSVRecord rec : gr.getCSVParser()){
+         /*   if(gender == "F") {
+                numbers = Integer.parseInt(rec.get(2));
+                counter += numbers;
+                System.out.println("numbers " + counter);
+                if(rec.get(0).equals(name)){
+                        System.out.println(" how many " +counter);
+                        break;
+                }
+            }*/
+            if(gender == "M") {
+                numbers += Integer.parseInt(rec.get(2));
+                System.out.println(numbers + " stage" + rec.getRecordNumber());
+                if(rec.get(0).equals(name)) {
+                    System.out.println(" how many " +numbers);
+                    break;
+                }
+            }
+        }
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Babyname junk = new Babyname();
+        junk.test();
+    }
+}
