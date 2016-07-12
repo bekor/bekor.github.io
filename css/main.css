@@ -141,3 +141,13 @@ nav ul ul li {
     background-color: #222;
     color: whitesmoke;
 }
+
+.aboutbackg{
+    margin-top: 0px;
+    background-position: center center;
+    background: #adadad;
+    background-image: url("../img/about_background.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: compact;
+}
