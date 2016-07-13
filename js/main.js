@@ -28,3 +28,5 @@ $('#myTabs a').click(function (e) {
     PR.prettyPrint();
   });
 });
+
+$("#colOne").height($("#colTwo").height());

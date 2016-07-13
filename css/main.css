@@ -142,11 +142,15 @@ nav ul ul li {
     color: whitesmoke;
 }
 
+/*
+***************        About me page style        ***************
+*/
+
 .aboutbackg{
     margin-top: 0px;
     background-position: center center;
     background: #adadad;
-    background-image: url("../img/about_background.gif");
+    background-image: url("../img/about_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: compact;
