@@ -4,6 +4,14 @@
    Bekor's custom styles for index pages
    ========================================================================== */
 
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
 /* 
 ***************        Header menu style        *************** 
 */
@@ -142,6 +150,7 @@ nav ul ul li {
     color: whitesmoke;
 }
 
+
 /*
 ***************        About me page style        ***************
 */
@@ -166,13 +175,22 @@ nav ul ul li {
     max-height: 700px;
 }
 
-.transbox div{
-    color: black;
-    font-family: 'Montserrat', sans-serif;
+.contact:hover{
+    background: #31b0d5;
 }
 
-.transbox div p{
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
+/*
+***************        Footer style        ***************
+*/
+
+footer {
+    text-align: center;
+}
+
+.footer {
+    position: relative;
+    margin-top: -180px;
+    height: 60px;
+    clear: both;
+    text-align: left;
 }
