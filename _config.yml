@@ -30,7 +30,11 @@ remote_theme: "jeffreytse/jekyll-theme-yat"
 
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
   - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-spaceship
   
 # Exclude from processing.
 # The following items will not be processed, by default.
